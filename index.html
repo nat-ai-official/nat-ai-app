@@ -4,123 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAT AI - التطبيق الرسمي</title>
+    <link rel="manifest" href="manifest.json">
     <style>
-        /* إعدادات الخلفية والتدرج اللوني (أسود وأخضر) */
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #000000 0%, #0a2f1d 100%);
+            background-color: #0b0f12;
             color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
-        }
-
-        /* الهيدر واسم التطبيق في المنتصف */
-        header {
-            margin-top: 50px;
-        }
-        
-        header h1 {
-            font-size: 3rem;
-            color: #00ff66;
-            margin: 0;
-            text-shadow: 0 0 20px rgba(0, 255, 102, 0.4);
-            letter-spacing: 2px;
-        }
-
-        /* قسم الوصف والتفاصيل */
-        main {
             padding: 20px;
-            max-width: 600px;
+            margin: 0;
         }
-
-        main p {
-            font-size: 1.3rem;
-            line-height: 1.8;
-            color: #dddddd;
-            margin-bottom: 30px;
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: #12181d;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #00e676;
         }
-
-        /* الميزات البرمجية للتطبيق */
-        .features {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-            text-align: right;
-            display: inline-block;
+        .logo-container {
+            margin-bottom: 20px;
         }
-
-        .features li {
-            font-size: 1.1rem;
+        .app-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 30px;
+            border: 3px solid #00e676;
+            box-shadow: 0 0 20px rgba(0, 230, 118, 0.3);
+            object-fit: cover;
+        }
+        h1 {
+            color: #00e676;
             margin: 10px 0;
-            color: #a2ffa2;
+            font-size: 28px;
+            letter-spacing: 1px;
         }
-
-        .features li::before {
-            content: "✦ ";
-            color: #00ff66;
-        }
-
-        /* زر التنزيل في الأسفل */
-        footer {
-            margin-bottom: 60px;
-            width: 100%;
-        }
-
-        .download-btn {
+        .version {
+            background: #1a232a;
+            color: #a0aec0;
             display: inline-block;
-            background-color: #00ff66;
-            color: #000000;
-            font-size: 1.4rem;
-            font-weight: bold;
-            padding: 15px 40px;
+            padding: 5px 15px;
             border-radius: 50px;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0, 255, 102, 0.4);
-            transition: all 0.3s ease;
+            font-size: 14px;
+            margin-bottom: 20px;
         }
-
-        .download-btn:hover {
-            background-color: #00cc52;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 255, 102, 0.6);
+        .info-table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
         }
-
-        .developer-credit {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: #888888;
+        .info-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #1a232a;
+            font-size: 16px;
+        }
+        .info-table td:first-child {
+            color: #a0aec0;
+            text-align: right;
+        }
+        .info-table td:last-child {
+            text-align: left;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .description {
+            color: #cbd5e0;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        .btn-download {
+            background: linear-gradient(135deg, #00e676 0%, #00b0ff 100%);
+            color: #0b0f12;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 230, 118, 0.4);
+            transition: transform 0.2s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .btn-download:active {
+            transform: scale(0.98);
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>NAT AI</h1>
-    </header>
-
-    <main>
-        <p>
-            مرحباً بك في المنصة الرسمية لتطبيق <strong>NAT AI</strong>. المساعد الذكي المتكامل والمطور بأحدث تقنيات الذكاء الاصطناعي لمساعدتك في إنجاز مشاريعك البرمجية، تنظيم محادثاتك، وإدارة بياناتك بسرعة فائقة وواجهة مستخدم عصرية ومريحة للعين.
-        </p>
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo.png" alt="NAT AI Logo" class="app-logo">
+        </div>
         
-        <ul class="features">
-            <li>واجهة داكنة احترافية مريحة باللونين الأسود والأخضر.</li>
-            <li>حفظ كامل ومستمر لسجل المحادثات بدون ضياع البيانات.</li>
-            <li>استجابة ذكية وفورية مدعومة بنماذج غوغل المتطورة.</li>
-        </ul>
-    </main>
+        <h1>NAT AI</h1>
+        <span class="version">إصدار v1.0.0</span>
 
-    <footer>
-        <a href="#" class="download-btn">تنزيل التطبيق المجاني APK</a>
-        <div class="developer-credit">Developed by Nour Attal</div>
-    </footer>
+        <p class="description">
+            المنصة الذكية المتكاملة المدعومة بالذكاء الاصطناعي لتلبية احتياجاتك المتعددة وبدعم كامل لخمس لغات مختلفة.
+        </p>
 
+        <table class="info-table">
+            <tr>
+                <td>الحجم</td>
+                <td>خفيف جداً (تطبيق ويب)</td>
+            </tr>
+            <tr>
+                <td>التوافق</td>
+                <td>أندرويد، iOS، والكمبيوتر</td>
+            </tr>
+            <tr>
+                <td>المطور</td>
+                <td>Developed by Nour Attal</td>
+            </tr>
+        </table>
+
+        <button class="btn-download" id="installBtn">تنزيل وتثبيت التطبيق</button>
+    </div>
+
+    <script>
+        let deferredPrompt;
+        const installBtn = document.getElementById('installBtn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+        });
+
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    console.log('User accepted the install prompt');
+                }
+                deferredPrompt = null;
+            } else {
+                alert('التطبيق جاهز للتثبيت! إذا لم تظهر النافذة تلقائياً، يمكنك تثبيته مباشرة بالضغط على خيارات المتصفح (⋮) ثم اختيار "إضافة إلى الشاشة الرئيسية".');
+            }
+        });
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('Service Worker Registered'))
+                    .catch(err => console.log('Service Worker Failed', err));
+            });
+        }
+    </script>
 </body>
-  </html>
-  
+</html>
